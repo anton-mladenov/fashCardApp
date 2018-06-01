@@ -1,0 +1,77 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #A3CF53;
+  margin: 0 auto;
+}
+
+body {
+  width: 1300px;
+  margin: 0 auto;
+  background-color: #E8EAEA;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding: 70px 0;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#mainTitle {
+  font-family: Graduate;
+  font-size: 50px;
+
+}
+
+#welcomeDiv {
+
+}
+
+#welcomeMain {
+  font-family: Lekton;
+  font-size: 35px;
+}
+
+#welcomeText {
+  font-family: Lekton;
+  font-size: 25px;
+}
+
+#showQuestionDiv {
+
+}
+
+#questionButton {
+  font-family: Graduate;
+  font-size: 25px;
+}
+
+#questionShowH4 {
+  font-family: Lekton;
+  font-size: 30px;
+}
+
+#rightWrongDiv {
+
+}
+
+#rightButton {
+  font-family: Graduate;
+  font-size: 25px;
+}
+
+#wrongButton {
+  font-family: Graduate;
+  font-size: 25px;
+}
+
+#scoreDiv {
+
+}
+
+#score {
+  font-family: Lekton;
+  font-size: 25px;
+}

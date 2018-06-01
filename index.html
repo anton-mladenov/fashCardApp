@@ -2,7 +2,11 @@
 <html>
 
 <head>
-
+  <meta charset="utf-8">
+  <meta name="description" content="An Awesome Flashcards Game In Your Browser">
+  <title>Mike & Anton's Flashcard Web Game</title>
+  <link href="./styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Graduate|Lekton" rel="stylesheet">
 </head>
 
 <header>
@@ -11,9 +15,27 @@
 
 <body>
 
+  <h1 id="mainTitle">Mike & Anton's Flashcard Web Game</h1>
+
+  <div id="welcomeDiv">
+    <h1 id="welcomeMain"> Hello there, stranger! </h1>
+    <h1 id="welcomeText"> Mike and Anton built a game for you so you don't waste your time on Facebook anymore, but here! </h1>
+  </div>
+
   <div id="showQuestionDiv">
-      <button id="questionButton">Ask Me A Question</button>
-      <h4 id="questionShowH4"></h4>
+    <button id="questionButton">Ask Me A Question</button>
+  </div>
+
+  <h4 id="questionShowH4"></h4>
+
+
+  <div id="rightWrongDiv">
+    <button id="rightButton">Right</button>
+    <button id="wrongButton">Wrong</button>
+  </div>
+
+  <div id="scoreDiv">
+    <h3 id="score"> Score: </h3>
   </div>
 
   <script type="text/javascript" src="./anton.js"></script>

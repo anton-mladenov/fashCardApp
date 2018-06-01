@@ -93,13 +93,7 @@ function createNewCard() {
 };
 
 function flipCards() {
-  /* (add an eventlistener to the showQuestionDiv or some other button listening for clicks)
-- get the H4.value
-- match that H4.value with its respective object from the anArray
-- get the object's id;
-- get the object's answer
-- assign the answer to a new child element
-- replace the old element with the new element */
+
   let question = questionShowH4.innerText;
   console.log("question is - ", question);
   for (var i = 0; i < flashCards.length; i++) {
