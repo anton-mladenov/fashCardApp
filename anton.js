@@ -3,13 +3,35 @@ let questionShowH4 = document.getElementById("questionShowH4");
 let showQuestionDiv = document.getElementById("showQuestionDiv");
 
 let flashCards = [
-  { refNum: 1, question: "What is a <div>?", answer: "<div> is an HTML element allocating space on a webpage." },
-  { refNum: 2, question: "The capital of Sweden?", answer: "Stockholm." },
-  { refNum: 3, question: "Where is Codaisseur located?", answer: "Codaisseur is located in Amsterdam, NL." },
-  { refNum: 4, question: "What makes a good coder?", answer: "Asking the right questions." },
-  { refNum: 5, question: "What is JavaScript?", answer: "It's THE programming language for the web." },
-  { refNum: 6, question: "What does localStorage do?", answer: "It allows the user to access his/her information from a previous session." },
-  { refNum: 7, question: "Who built 'git'?", answer: "Linus Torvalds, the creator of the Linux kernel." },
+  {
+    refNum: 1,
+    question: "What is a <div>?",
+    answer: "<div> is an HTML element allocating space on a webpage."
+  }, {
+    refNum: 2,
+    question: "The capital of Sweden?",
+    answer: "Stockholm."
+  }, {
+    refNum: 3,
+    question: "Where is Codaisseur located?",
+    answer: "Codaisseur is located in Amsterdam, NL."
+  }, {
+    refNum: 4,
+    question: "What makes a good coder?",
+    answer: "Asking the right questions."
+  }, {
+    refNum: 5,
+    question: "What is JavaScript?",
+    answer: "It's THE programming language for the web."
+  }, {
+    refNum: 6,
+    question: "What does localStorage do?",
+    answer: "It allows the user to access his/her information from a previous session."
+  }, {
+    refNum: 7,
+    question: "Who built 'git'?",
+    answer: "Linus Torvalds, the creator of the Linux kernel."
+  }
 ];
 
 let myStorage = [];
@@ -39,16 +61,61 @@ function randomizer(anArray) { // Here the randomizing function begins
     allQuestions.push(anArray[i].question);
   };
 
-  console.log("allQuestions test: ", allQuestions);
+  // console.log("allQuestions test: ", allQuestions);
   let finalResult = allQuestions.splice(Math.floor(Math.random() * allQuestions.length), 1)[0];
-  console.log("finalResult test:", finalResult);
+  // console.log("finalResult test:", finalResult);
   return finalResult;
 
-};
+}; // here the randomizing function ends
 
 questionButton.addEventListener("click", function(event) { // a button with event listener for basic testing purposes
-  console.log(flashCards[0].question);
+  // console.log(flashCards[0].question);
   let someQuestion = randomizer(flashCards);
   questionShowH4.innerText = someQuestion;
   showQuestionDiv.appendChild(questionShowH4);
 });
+
+function createNewCard() {
+
+  let newRefNum = flashCards.length + 1;
+  let newQuestion = prompt("What is your new question?");
+  let newAnswer = prompt("What is the answer to that question?");
+
+  let newCard = {
+    refNum: newRefNum,
+    question: newQuestion,
+    answer: newAnswer
+  };
+
+  flashCards.push(newCard);
+
+  // console.log(flashCards);
+};
+
+function flipCards() {
+  /* (add an eventlistener to the showQuestionDiv or some other button listening for clicks)
+- get the H4.value
+- match that H4.value with its respective object from the anArray
+- get the object's id;
+- get the object's answer
+- assign the answer to a new child element
+- replace the old element with the new element */
+  let question = questionShowH4.innerText;
+  console.log("question is - ", question);
+  for (var i = 0; i < flashCards.length; i++) {
+    if (question === flashCards[i].question) {
+      let card = flashCards[i];
+      console.log("card is - ", card);
+      let answer = card.answer;
+      console.log("answer is -  ", answer);
+      questionShowH4.innerText = answer;
+    };
+  };
+
+};
+
+questionShowH4.addEventListener("click", function(event) { // a button with event listener for basic testing purposes
+  flipCards();
+});
+
+//
