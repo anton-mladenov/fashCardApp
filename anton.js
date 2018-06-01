@@ -15,7 +15,7 @@ let flashCards = [
 let myStorage = [];
 var userStorage = localStorage.getItem('userStorage'); // a variable temporarily storing the localStorage
 
-function addToLocalStorage(aString) {
+/* function addToLocalStorage(aString) { // the localStorage functionality which will work on later when the main part of the code is ready
 
   if (!localStorage.getItem('userStorage')) { // check if localStorage is NOT empty, i.e. if page was NOT visited before
     myStorage.push(aString);
@@ -29,7 +29,7 @@ function addToLocalStorage(aString) {
       localStorage.setItem('userStorage', JSONstr);
     };
   };
-};
+}; */
 
 function randomizer(anArray) { // Here the randomizing function begins
 
@@ -46,7 +46,7 @@ function randomizer(anArray) { // Here the randomizing function begins
 
 };
 
-questionButton.addEventListener("click", function(event) {
+questionButton.addEventListener("click", function(event) { // a button with event listener for basic testing purposes
   console.log(flashCards[0].question);
   let someQuestion = randomizer(flashCards);
   questionShowH4.innerText = someQuestion;
